@@ -66,6 +66,8 @@ jobs:
           flutter create --org $(echo "${{ github.event.inputs.package_id }}" | rev | cut -d'.' -f2- | rev) --project-name app_flutter app_flutter
           cp codigo_usuario.txt app_flutter/lib/main.dart
           cd app_flutter
+          flutter pub add flutter_tts audioplayers shared_preferences http || true
+          sed -i 's/<application/<uses-permission android:name="android.permission.INTERNET"\/>\n    <application/' android/app/src/main/AndroidManifest.xml
           if [ "${{ github.event.inputs.build_format }}" == "aab" ]; then
             flutter build appbundle --release
           else
