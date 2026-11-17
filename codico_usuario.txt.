@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:audioplayers/audioplayers.dart';
@@ -243,6 +244,7 @@ class _MeuDicionarioState extends State<MeuDicionario> {
     _audioPlayer.dispose();
     _controller.dispose();
     super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -379,4 +381,3 @@ class _MeuDicionarioState extends State<MeuDicionario> {
     );
   }
 }
-  }
