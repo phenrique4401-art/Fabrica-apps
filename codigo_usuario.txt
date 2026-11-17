@@ -242,7 +242,7 @@ class _MeuDicionarioState extends State<MeuDicionario> {
     _flutterTts.stop();
     _audioPlayer.dispose();
     _controller.dispose();
-    super.dispose();
+    super.dispose();}
   @override
   Widget build(BuildContext context) {
     return Container(
