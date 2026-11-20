@@ -206,12 +206,19 @@ class _MeuDicionarioState extends State<MeuDicionario> {
       final response = await http.get(url);
 
       if (response.statusCode == 200) {
-        final data = jsonDecode(response.body);
-        String traducaoGerada = data;
-        setState(() {
-          _resultadoSignificado = "In English: '$traducaoGerada'";
-          _isLoading = false;
-        });
+        
+             final data = jsonDecode(response.body);
+   String traducaoGerada = data.toString();
+   setState(() {
+     _resultadoSignificado = traducaoGerada;
+     _isLoading = false;
+     });
+ 
+        
+        
+  
+        
+        
       } else {
         setState(() {
           _resultadoSignificado = "Erro de conexão. Tente novamente mais tarde.";
